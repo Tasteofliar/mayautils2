@@ -85,15 +85,15 @@ class RenameTool(QDialog):
     def closeUI(self):
         self.close() 
             
+def run():
+    global ui
+    try:
+        ui.close()
+    except:
+        pass
+            
+    maya_ptr = omui.MQtUtil.mainWindow()
+    ptr = wrapInstance(int(maya_ptr), QWidget)
 
-global ui
-try:
-    ui.close()
-except:
-    pass
-        
-maya_ptr = omui.MQtUtil.mainWindow()
-ptr = wrapInstance(int(maya_ptr), QWidget)
-
-ui = RenameTool(parent = ptr)
-ui.show()
+    ui = RenameTool(parent = ptr)
+    ui.show()

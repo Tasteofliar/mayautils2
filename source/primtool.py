@@ -91,15 +91,19 @@ class polygonTool(QMainWindow):
     def closeUI(self):
         cmds.quit(force=True)
         
+def run():
+    '''
+    aaaaaaa
+    
+    '''
+    global ui
+    try:
+        ui.close()
+    except:
+        pass
+            
+    maya_ptr = omui.MQtUtil.mainWindow()
+    ptr = wrapInstance(int(maya_ptr), QWidget)
 
-global ui
-try:
-    ui.close()
-except:
-    pass
-        
-maya_ptr = omui.MQtUtil.mainWindow()
-ptr = wrapInstance(int(maya_ptr), QWidget)
-
-ui = polygonTool(parent = ptr)
-ui.show()
+    ui = polygonTool(parent = ptr)
+    ui.show()
