@@ -147,15 +147,16 @@ class ButtonStyle(QPushButton):
                 border-width: 5px;
             }
         """)
-        
-global ui
-try:
-    ui.close()
-except:
-    pass
-        
-maya_ptr = omui.MQtUtil.mainWindow()
-ptr = wrapInstance(int(maya_ptr), QWidget)
+    
+def run():
+    global ui
+    try:
+        ui.close()
+    except:
+        pass
+            
+    maya_ptr = omui.MQtUtil.mainWindow()
+    ptr = wrapInstance(int(maya_ptr), QWidget)
 
-ui = SearchAndReplaceTool(parent = ptr)
-ui.show()
+    ui = SearchAndReplaceTool(parent = ptr)
+    ui.show()
